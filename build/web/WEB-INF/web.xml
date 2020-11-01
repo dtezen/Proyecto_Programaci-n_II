@@ -4,9 +4,49 @@
         <servlet-name>srvLogin</servlet-name>
         <servlet-class>Controlador.srvLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>srvEmpleado</servlet-name>
+        <servlet-class>Controlador.srvEmpleado</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvEmpresa</servlet-name>
+        <servlet-class>Controlador.srvEmpresa</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvUadmin</servlet-name>
+        <servlet-class>Controlador.srvUadmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvDependencias</servlet-name>
+        <servlet-class>Controlador.srvDependencias</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>srvExpedientes</servlet-name>
+        <servlet-class>Controlador.srvExpedientes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>srvLogin</servlet-name>
         <url-pattern>/srvLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvEmpleado</servlet-name>
+        <url-pattern>/srvEmpleado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvEmpresa</servlet-name>
+        <url-pattern>/srvEmpresa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvUadmin</servlet-name>
+        <url-pattern>/srvUadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvDependencias</servlet-name>
+        <url-pattern>/srvDependencias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>srvExpedientes</servlet-name>
+        <url-pattern>/srvExpedientes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

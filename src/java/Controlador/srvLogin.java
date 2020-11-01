@@ -5,9 +5,7 @@
  */
 package Controlador;
 
-import Modelo.csConexion;
 import Modelo.csUsuario;
-import Modelo.csValidar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -16,10 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ingSergio
- */
+
 public class srvLogin extends HttpServlet {
 
     /**
@@ -37,30 +32,29 @@ public class srvLogin extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            RequestDispatcher rd ;
+            RequestDispatcher rd=null;
+            
             String usuario, contrasenia;
             Boolean encontrado=false;
-            String perfil;
+            String perfil="";
+            String userResp ="";
+            csUsuario u = new csUsuario();
             
             usuario = request.getParameter("txtUsuario");
             contrasenia = request.getParameter("txtPassword");
-            
-            //csValidar c = new csValidar(usuario,contrasenia);
-            csUsuario u = new csUsuario();
-            //encontrado=c.validarUsuario();
             perfil=u.buscarUsuario(usuario, contrasenia);
-            //csConexion c = new csConexion();
-            //perfil = c.conectar();
+
               if (perfil !="")
               {
                 encontrado=true;
               }
             
+            request.setAttribute("usuario", usuario);
             request.setAttribute("respuesta", encontrado);
             request.setAttribute("perfil",perfil);
             rd = request.getRequestDispatcher("login.jsp");
             rd.forward(request, response);
-           /*out.println("<!DOCTYPE html>");
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet srvLogin</title>");            
@@ -71,7 +65,7 @@ public class srvLogin extends HttpServlet {
            
             out.println("Respuesta del Modelo: " + encontrado);
             out.println("</body>");
-            out.println("</html>");*/
+            out.println("</html>");
            
         }
     }
